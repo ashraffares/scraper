@@ -58,4 +58,20 @@ class Logic
     end
     list
   end
+
+  def job(url)
+    unparsed_page = HTTParty.get(url)
+    parsed_page = Nokogiri::HTML(unparsed_page.body)
+    jobslist = parsed_page.css('div.css-9hlx6w')
+    page = 1
+    perpage = jobslist.count
+    totaljobs = parsed_page.css('strong')[0].text
+    totaljobs = totaljobs.delete(',')
+    begin
+      sum = (totaljobs.to_f / perpage).round
+    rescue FloatDomainError
+      return
+    end
+    job_itrerator(url, page, sum)
+  end
 end
