@@ -22,4 +22,11 @@ describe Logic do
     end
   end
 
+  describe '#quote' do
+    it 'it should return Array' do
+      a = logic.quote('https://quotes.toscrape.com/tag/inspirational')
+      expect(a.class).to eql Array
+    end
+  end
+
 end
