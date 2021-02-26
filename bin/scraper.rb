@@ -45,4 +45,19 @@ class Main < Logic
     
         puts 'Program Ended'.green
       end
+      
+      def flow
+        puts 'scrap (jobs is j) or (quotes is q) just type (j/q)'
+        var = gets.chomp
+        case var
+        when 'j'
+          job_scrape
+          flow if ask_user
+        when 'q'
+          quote_scrape
+          flow if ask_user
+        else
+          flow
+        end
+      end
 end
