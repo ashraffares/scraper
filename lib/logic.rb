@@ -11,4 +11,9 @@ class Logic
     end
     false
   end
+
+  def quote_url(tag)
+    basic_url = 'https://quotes.toscrape.com/'
+    "#{basic_url}tag/#{tag}"
+  end
 end
