@@ -39,7 +39,7 @@ Additional description about the project and its features.
 ## Getting Started
 To get a local copy of the repository please run the following commands on your terminal:
 -$ git clone 'https://github.com/ashraffares/capstone1.git'
-- to run the program open folder cd into bin and run the command ruby scraper.rb
+- to run the program open capstone1 cd into bin and run the command ruby scraper.rb
 
 
 ## Test
