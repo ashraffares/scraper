@@ -31,4 +31,9 @@ class Logic
     end
     arr
   end
+
+  def job_url(sub_url)
+    basic_url = 'https://wuzzuf.net/search/jobs/?q='
+    basic_url + sub_url
+  end
 end
