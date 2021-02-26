@@ -36,4 +36,26 @@ class Logic
     basic_url = 'https://wuzzuf.net/search/jobs/?q='
     basic_url + sub_url
   end
+
+  def job_itrerator(url, page, sum)
+    list = []
+    while page <= sum
+      sub_unparsed_page = HTTParty.get(url + "&start=#{page}")
+      sub_parsed_page = Nokogiri::HTML(sub_unparsed_page.body)
+      sub_jobslist = sub_parsed_page.css('div.css-9hlx6w')
+      sub_jobslist.each do |jobl|
+        title = jobl.css('h2.css-m604qf')
+        job = Job.new
+        job.joblink = jobl.css('a.css-nn640c')[0].attributes['href'].value
+        job.title = title.css('a.css-nn640c')[0].text
+        job.location = jobl.css('span.css-5wys0k').text
+        job.posttime = jobl.css('div.css-4c4ojb').text
+        job.porf = jobl.css('span.css-1ve4b75.ex6kyvk0').text
+        job.description = jobl.css('a.css-nn640c').text
+        list.push(job)
+      end
+      page += 1
+    end
+    list
+  end
 end
