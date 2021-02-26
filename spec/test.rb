@@ -29,4 +29,11 @@ describe Logic do
     end
   end
 
+  describe '#job_itrerator' do
+    it 'it should return Array' do
+      a = logic.job_itrerator('https://wuzzuf.net/search/jobs/?q=full+stack+web+devdloper', 1, 4)
+      expect(a.class).to eql Array
+    end
+  end
+
 end
