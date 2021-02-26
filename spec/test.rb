@@ -12,4 +12,14 @@ describe Logic do
     end
   end
 
+  describe '#quote_url(tag)' do
+    it 'it should return full url with key' do
+      expect(logic.quote_url('love')).to eql 'https://quotes.toscrape.com/tag/love'
+      expect(logic.quote_url('inspirational')).to eql 'https://quotes.toscrape.com/tag/inspirational'
+      expect(logic.quote_url('life')).to eql 'https://quotes.toscrape.com/tag/life'
+      expect(logic.quote_url('humor')).to eql 'https://quotes.toscrape.com/tag/humor'
+      expect(logic.quote_url('books')).to eql 'https://quotes.toscrape.com/tag/books'
+    end
+  end
+
 end
