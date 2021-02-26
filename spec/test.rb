@@ -43,4 +43,12 @@ describe Logic do
     end
   end
 
+  describe '#job_url' do
+    it 'it should return url + key' do
+      expect(logic.job_url('full stack web devdloper')).to eql 'https://wuzzuf.net/search/jobs/?q=full stack web devdloper'
+      expect(logic.job_url('markiting')).to eql 'https://wuzzuf.net/search/jobs/?q=markiting'
+      expect(logic.job_url('hello')).to eql 'https://wuzzuf.net/search/jobs/?q=hello'
+    end
+  end
+
 end
