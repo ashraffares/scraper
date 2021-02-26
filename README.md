@@ -4,8 +4,11 @@
 
  This is implementation of scraper in ruby putting emphasis on the use of how to scrape list of inforamtion on websites and enumerable methods classes objects inheritance.
 
-![screenshot](assets\capture.PNG)
-![screenshot](assets\capture1.PNG)
+
+![](https://files.slack.com/files-pri/T47CT8XPG-F01P9TTBU30/capture1.png)
+
+![](https://files.slack.com/files-pri/T47CT8XPG-F01P9TLJK1U/capture.png)
+
 
 ## Description
 - this program is scraping two websites https://wuzzuf.net/ and https://quotes.toscrape.com/
