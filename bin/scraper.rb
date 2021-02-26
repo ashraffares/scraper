@@ -20,6 +20,7 @@ class Main < Logic
   def job_scrape
     puts 'Search jobs: '
     sub_url = gets.chomp
+    puts 'Wait it could take a minute or so'.green
     url = job_url(sub_url)
     begin
       job(url).each_with_index do |q, index|
