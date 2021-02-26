@@ -16,4 +16,19 @@ class Logic
     basic_url = 'https://quotes.toscrape.com/'
     "#{basic_url}tag/#{tag}"
   end
+
+  def quote(url)
+    unparsed_page = HTTParty.get(url)
+    parse_page = Nokogiri::HTML(unparsed_page.body)
+    quotes = parse_page.css('div.quote')
+    arr = []
+    quotes.each do |quote|
+      quotes = Quotes.new
+      quotes.text = quote.css('span.text').text
+      quotes.author = quote.css('small.author').text
+      quotes.tags = quote.css('meta.keywords')[0].attributes['content'].value
+      arr.push(quotes)
+    end
+    arr
+  end
 end
