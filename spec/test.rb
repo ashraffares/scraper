@@ -50,5 +50,4 @@ describe Logic do
       expect(logic.job_url('hello')).to eql 'https://wuzzuf.net/search/jobs/?q=hello'
     end
   end
-
 end
