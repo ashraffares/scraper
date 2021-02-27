@@ -1,6 +1,6 @@
 require_relative '../lib/settings'
-require 'open-uri'
 require 'nokogiri'
+require 'httparty'
 
 class Logic
   def quote_validate_tags?(tag)
@@ -21,8 +21,8 @@ class Logic
   end
 
   def quote(url)
-    unparsed_page = URI.open(url)
-    parse_page = Nokogiri::HTML(unparsed_page)
+    unparsed_page = HTTParty.get(url)
+    parse_page = Nokogiri::HTML(unparsed_page.body)
     quotes = parse_page.css('div.quote')
     arr = []
     quotes.each do |quote|
@@ -35,8 +35,6 @@ class Logic
     arr
   end
 
-  private :quote
-
   def job_url(sub_url)
     basic_url = 'https://wuzzuf.net/search/jobs/?q='
     basic_url + sub_url
@@ -45,8 +43,8 @@ class Logic
   def job_itrerator(url, page, sum)
     list = []
     while page <= sum
-      sub_unparsed_page = URI.open(url + "&start=#{page}")
-      sub_parsed_page = Nokogiri::HTML(sub_unparsed_page)
+      sub_unparsed_page = HTTParty.get(url + "&start=#{page}")
+      sub_parsed_page = Nokogiri::HTML(sub_unparsed_page.body)
       sub_jobslist = sub_parsed_page.css('div.css-9hlx6w')
       sub_jobslist.each do |jobl|
         title = jobl.css('h2.css-m604qf')
@@ -65,8 +63,8 @@ class Logic
   end
 
   def job(url)
-    unparsed_page = URI.open(url)
-    parsed_page = Nokogiri::HTML(unparsed_page)
+    unparsed_page = HTTParty.get(url)
+    parsed_page = Nokogiri::HTML(unparsed_page.body)
     jobslist = parsed_page.css('div.css-9hlx6w')
     page = 1
     perpage = jobslist.count
