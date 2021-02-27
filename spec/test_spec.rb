@@ -2,13 +2,13 @@ require_relative '../lib/logic'
 
 describe Logic do
   logic = Logic.new
-  describe '#quote_validate_tags' do
+  describe '#quote_validate_tags?' do
     it 'it should return true or false' do
-      expect(logic.quote_validate_tags('love')).to eql true
-      expect(logic.quote_validate_tags('life')).to eql true
-      expect(logic.quote_validate_tags('humor')).to eql true
-      expect(logic.quote_validate_tags('test')).to eql false
-      expect(logic.quote_validate_tags('something')).to eql false
+      expect(logic.quote_validate_tags?('love')).to eql true
+      expect(logic.quote_validate_tags?('life')).to eql true
+      expect(logic.quote_validate_tags?('humor')).to eql true
+      expect(logic.quote_validate_tags?('test')).to eql false
+      expect(logic.quote_validate_tags?('something')).to eql false
     end
   end
 
@@ -22,23 +22,9 @@ describe Logic do
     end
   end
 
-  describe '#quote' do
-    it 'it should return Array' do
-      a = logic.quote('https://quotes.toscrape.com/tag/inspirational')
-      expect(a.class).to eql Array
-    end
-  end
-
   describe '#job_itrerator' do
     it 'it should return Array' do
       a = logic.job_itrerator('https://wuzzuf.net/search/jobs/?q=full+stack+web+devdloper', 1, 4)
-      expect(a.class).to eql Array
-    end
-  end
-
-  describe '#job' do
-    it 'it should return Array' do
-      a = logic.job('https://wuzzuf.net/search/jobs/?q=full+stack+web+devdloper')
       expect(a.class).to eql Array
     end
   end

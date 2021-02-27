@@ -3,7 +3,7 @@ require 'httparty'
 require 'nokogiri'
 
 class Logic
-  def quote_validate_tags(tag)
+  def quote_validate_tags?(tag)
     state = false
     tags = %w[love inspirational life humor books reading friendship friends truth simile]
     tags.each do |q|
@@ -34,6 +34,8 @@ class Logic
     end
     arr
   end
+
+  private :quote
 
   def job_url(sub_url)
     basic_url = 'https://wuzzuf.net/search/jobs/?q='
@@ -77,4 +79,7 @@ class Logic
     end
     job_itrerator(url, page, sum)
   end
+
+  private :job
+
 end
