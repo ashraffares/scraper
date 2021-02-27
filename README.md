@@ -22,7 +22,6 @@ Additional description about the project and its features.
 - nokogiri
 
 ## Authors
-
 - GitHub: [@githubhandle](https://github.com/ashraffares/http-ashraffares.github.io-)
 - Twitter: [@twitterhandle](https://twitter.com/Fares09301164)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/fares-ashraf-382a35176/)
