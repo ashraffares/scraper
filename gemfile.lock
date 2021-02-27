@@ -8,11 +8,11 @@ GEM
       multi_xml (>= 0.5.2)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0212)
+    mime-types-data (3.2021.0225)
     multi_xml (0.6.0)
     nokogiri (1.11.1-x64-mingw32)
       racc (~> 1.4)
-    racc (1.4.16)
+    racc (1.5.2)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -31,10 +31,10 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  colorize
-  httparty
-  nokogiri
-  rspec
+  colorize (~> 0.8.1)
+  httparty (~> 0.18.1)
+  nokogiri (~> 1.11)
+  rspec (~> 3.10)
 
 BUNDLED WITH
    2.1.4
