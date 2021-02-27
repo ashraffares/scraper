@@ -1,5 +1,5 @@
 require_relative '../lib/settings'
-require 'httparty'
+require 'open-uri'
 require 'nokogiri'
 
 class Logic
@@ -21,8 +21,8 @@ class Logic
   end
 
   def quote(url)
-    unparsed_page = HTTParty.get(url)
-    parse_page = Nokogiri::HTML(unparsed_page.body)
+    unparsed_page = URI.open(url)
+    parse_page = Nokogiri::HTML(unparsed_page)
     quotes = parse_page.css('div.quote')
     arr = []
     quotes.each do |quote|
@@ -45,8 +45,8 @@ class Logic
   def job_itrerator(url, page, sum)
     list = []
     while page <= sum
-      sub_unparsed_page = HTTParty.get(url + "&start=#{page}")
-      sub_parsed_page = Nokogiri::HTML(sub_unparsed_page.body)
+      sub_unparsed_page = URI.open(url + "&start=#{page}")
+      sub_parsed_page = Nokogiri::HTML(sub_unparsed_page)
       sub_jobslist = sub_parsed_page.css('div.css-9hlx6w')
       sub_jobslist.each do |jobl|
         title = jobl.css('h2.css-m604qf')
@@ -65,8 +65,8 @@ class Logic
   end
 
   def job(url)
-    unparsed_page = HTTParty.get(url)
-    parsed_page = Nokogiri::HTML(unparsed_page.body)
+    unparsed_page = URI.open(url)
+    parsed_page = Nokogiri::HTML(unparsed_page)
     jobslist = parsed_page.css('div.css-9hlx6w')
     page = 1
     perpage = jobslist.count
