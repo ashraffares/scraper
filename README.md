@@ -43,7 +43,7 @@ To get a local copy of the repository please run the following commands on your 
 
 
 ## Test
-- in capstone1 folder run this command in your terminal(cmd) rspec spec/test.rb
+- in capstone1 folder run this command in your terminal(cmd) rspec spec/test_spec.rb
 
 
 ## Show your support
