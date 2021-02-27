@@ -1,5 +1,4 @@
 require_relative '../lib/settings'
-require 'set'
 require 'httparty'
 require 'nokogiri'
 
