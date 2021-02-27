@@ -29,11 +29,7 @@ Additional description about the project and its features.
 
 
 ## Install
-- install the necessary gem files by open cmd and run
-- gem install httparty
-- gem install nokogiri
-- gem install require 'colorize'
-- gem install rspec
+- cd into project1 and run bundle install
 
 
 ## Getting Started
