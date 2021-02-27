@@ -8,7 +8,7 @@
 ![Capture1](https://user-images.githubusercontent.com/37639594/109302598-2d699180-7842-11eb-8b5c-97896a54f8db.PNG)
 
 ## Description
-- this program is scraping two websites https://wuzzuf.net/ and https://quotes.toscrape.com/
+- this program is scraping two websites (https://wuzzuf.net/) and (https://quotes.toscrape.com/)
 - the program will ask you to choose which site you want to scrap jobs or quotes
 - after you choose the site you will be prompted to enter genre in quotes or job you're looking for
 - after you get the data it will ask you if you want to continue or quit the program
@@ -40,7 +40,6 @@ To get a local copy of the repository please run the following commands on your 
 
 ## Test
 - in capstone1 folder run this command in your terminal(cmd) rspec spec/test_spec.rb
-
 
 ## Show your support
 
