@@ -50,6 +50,3 @@ To get a local copy of the repository please run the following commands on your 
 
 Give a ⭐️ if you like this project!!
 
-## 📝 License
-
-This project is [MIT](LICENSE) licensed.
