@@ -1,15 +1,19 @@
 require_relative '../lib/settings'
-
+require 'set'
 require 'httparty'
 require 'nokogiri'
 
 class Logic
   def quote_validate_tags(tag)
+    state = false
     tags = %w[love inspirational life humor books reading friendship friends truth simile]
     tags.each do |q|
-      return true if q == tag
+      if q == tag
+        state = true
+        break
+      end
     end
-    false
+    state
   end
 
   def quote_url(tag)
@@ -70,7 +74,7 @@ class Logic
     begin
       sum = (totaljobs.to_f / perpage).round
     rescue FloatDomainError
-      return
+      nil
     end
     job_itrerator(url, page, sum)
   end
