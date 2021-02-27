@@ -42,9 +42,11 @@ class Main < Logic
     puts
     puts 'Type y to continue or Enter to end'
     var = gets.chomp
-    return true if var == 'y'
-
-    puts 'Program Ended'.green
+    if var == 'y'
+      true
+    else
+      puts 'Program Ended'.green
+    end
   end
 
   def flow
