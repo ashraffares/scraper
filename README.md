@@ -4,8 +4,8 @@
 
  This is implementation of scraper in ruby putting emphasis on the use of how to scrape list of inforamtion on websites and enumerable methods classes objects inheritance.
 
-![screenshot](assets\Capture.PNG)
-![screenshot](assets\Capture1.PNG)
+![Capture](https://user-images.githubusercontent.com/37639594/109302596-2c386480-7842-11eb-86fb-3eea5b6ef6ef.PNG)
+![Capture1](https://user-images.githubusercontent.com/37639594/109302598-2d699180-7842-11eb-8b5c-97896a54f8db.PNG)
 
 ## Description
 - this program is scraping two websites https://wuzzuf.net/ and https://quotes.toscrape.com/
@@ -39,7 +39,7 @@ Additional description about the project and its features.
 ## Getting Started
 To get a local copy of the repository please run the following commands on your terminal:
 -$ git clone 'https://github.com/ashraffares/capstone1.git'
-- to run the program open folder cd into bin and run the command ruby scraper.rb
+- to run the program open capstone1 cd into bin and run the command ruby scraper.rb
 
 
 ## Test
